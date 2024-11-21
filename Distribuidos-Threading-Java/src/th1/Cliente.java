@@ -30,15 +30,18 @@ public class Cliente {
             // Recibir respuesta del servidor
             String respuesta = (String) ois.readObject();
             System.out.println(respuesta);
-
+            
             // Actualizar la persona
             persona.setNombre("Carlos");
             persona.setEdad(35);
 
+            oos.reset();
+            
             // Enviar mensaje de actualización
             oos.writeObject("Actualizo la persona");
             // Enviar el objeto Persona actualizado
             oos.writeObject(persona);
+            oos.flush();
 
             // Recibir la respuesta del servidor
             respuesta = (String) ois.readObject();

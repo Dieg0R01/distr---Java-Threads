@@ -48,9 +48,12 @@ class ClienteHandler implements Runnable {
             Persona persona = (Persona) ois.readObject();
             System.out.println("Servidor: He recibido el objeto Persona con nombre " + persona.getNombre() + " y edad " + persona.getEdad());
 
+            Thread.sleep(2000);
+            
             // Enviar respuesta al cliente
             oos.writeObject("He recibido el objeto Persona con nombre " + persona.getNombre() + " y edad " + persona.getEdad());
-
+            oos.flush();;
+            
             // Recibir otro mensaje con el objeto Persona actualizado
             mensaje = (String) ois.readObject();
             System.out.println(mensaje);
@@ -58,10 +61,14 @@ class ClienteHandler implements Runnable {
             // Recibir el objeto Persona actualizado
             persona = (Persona) ois.readObject();
             System.out.println("Servidor: He recibido el objeto Persona con nombre " + persona.getNombre() + " y edad " + persona.getEdad());
+            
+            Thread.sleep(2000);
 
             // Enviar la respuesta final
             oos.writeObject("He recibido el objeto Persona con nombre " + persona.getNombre() + " y edad " + persona.getEdad());
-        } catch (IOException | ClassNotFoundException e) {
+            oos.flush();
+            
+        } catch (IOException | ClassNotFoundException | InterruptedException e) {
             e.printStackTrace();
         } finally {
             try {
