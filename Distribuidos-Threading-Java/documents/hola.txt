@@ -1,0 +1,6 @@
+hola que tal
+esto
+es el contenido
+de mi fichero
+que estoy mandando desde el servidor
+más camión chicharrón
