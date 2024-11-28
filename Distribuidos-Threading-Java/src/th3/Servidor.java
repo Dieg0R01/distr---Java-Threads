@@ -1,4 +1,4 @@
-package th2;
+package th3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

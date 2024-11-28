@@ -1,4 +1,4 @@
-package th2;
+package th3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,9 +20,9 @@ public class Cliente {
             Scanner scanner = new Scanner(System.in);
             String respuesta;
             while (true) {
-            	String menu;
-				while(menu = entrada.readLine() != null) {
-            		System.out.println(menu)); // Mostrar menú del servidor
+            	int menu;
+				while((menu = entrada.read()) != -1) {
+            		System.out.println(menu); // Mostrar menú del servidor
             	}
                 int opcion = scanner.nextInt();
                 salida.println(opcion);
